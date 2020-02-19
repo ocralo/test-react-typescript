@@ -2,11 +2,12 @@
 import React, { FunctionComponent, useState } from "react";
 import "./style.css";
 
-function TextInput() {
-  return (
-    <input className="inputFocusable" type="text" placeholder="..." />
-  );
+function TextInput(props: IProps) {
+  return <input className="inputFocusable" type="text" placeholder="..." />;
 }
 
+interface IProps {
+  focused?: boolean;
+}
 //Se exporta el componente
 export default TextInput;

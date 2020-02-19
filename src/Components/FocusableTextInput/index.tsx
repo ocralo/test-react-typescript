@@ -2,11 +2,18 @@
 import React, { FunctionComponent, useState } from "react";
 //se importan los estilos
 import "./style.css";
+//Se importan los componentes necesarios
+import TextInput from "../TextInput";
+
+
 
 function FocusableTextInput() {
     return (
-      <div></div>
-  );
+      <form>
+        <TextInput />
+        <h1></h1>
+      </form>
+    );
 }
 
 //Se exporta el componente

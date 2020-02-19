@@ -1,17 +1,17 @@
 //Se importan las librerias necesarias
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState, useRef } from "react";
 //se importan los estilos
 import "./style.css";
 //Se importan los componentes necesarios
-import TextInput from "../TextInput";
-
+import TextInput from "../../Components/TextInput";
 
 
 function FocusableTextInput() {
+  const [focused,setFocused] = React.useState(false);
     return (
       <form>
         <TextInput />
-        <h1></h1>
+        <h1>{focused}</h1>
       </form>
     );
 }

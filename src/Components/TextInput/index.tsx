@@ -1,10 +1,12 @@
 //Se importan las librerias necesarias
 import React, { FunctionComponent, useState } from "react";
-
+import "./style.css";
 
 function TextInput() {
-  return <input type="text" name="inputText"/>;
+  return (
+    <input className="inputFocusable" type="text" placeholder="..." />
+  );
 }
 
-//Se exporta el componente 
+//Se exporta el componente
 export default TextInput;

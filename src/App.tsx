@@ -11,7 +11,7 @@ const viewHome = Loadable({
 	loading: Spinner
 });
 
-
+/* Funcion la cual se encargara de direccionar las rutas de los componentes que se mostraran */
 function App() {
   return (
     <BrowserRouter>

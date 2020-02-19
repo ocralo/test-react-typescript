@@ -7,7 +7,7 @@ import Spinner from "./Components/Spinner";
 /* Se agrega la vista del componente a una constante y le agrega el loadeble, 
 para que cuando no cargue el componente muestre un spinner. */
 const viewHome = Loadable({
-	loader: () => import( "./Components/TextInput"),
+	loader: () => import( "./views/focusable-input"),
 	loading: Spinner
 });
 

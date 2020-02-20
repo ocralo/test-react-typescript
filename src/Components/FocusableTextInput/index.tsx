@@ -7,12 +7,11 @@ import TextInput from "../../Components/TextInput";
 
 
 function FocusableTextInput() {
-  const [focused, setFocused] = React.useState(false);
-  const refTextInput = useRef();
+  const [focused, setFocused] = useState<boolean>(false);
     return (
       <form>
-        <TextInput />
-        <h1>{focused}</h1>
+        <TextInput propSetFocused={setFocused} />
+        <h1>{`${focused}`}</h1>
       </form>
     );
 }

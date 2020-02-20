@@ -1,5 +1,6 @@
 //Se importan las librerias necesarias
 import React, { useRef, useEffect, useState } from "react";
+import axios from "axios";
 import "./style.css";
 
 //funcion para la vista del formulario de registro
@@ -13,7 +14,7 @@ function RegisterForm() {
 
   const InputUserRef = useRef<HTMLInputElement>(null);
   const InputUserPhone = useRef<HTMLInputElement>(null);
-  const InputUserPhoneInit = useRef<HTMLInputElement>(null);
+  const InputUserPhone2 = useRef<HTMLInputElement>(null);
 
   /* Funcion para cambiar los datos del usuario cada vez que hay un cambio en el input
      las variables de entrada es in HTMLInputElement
@@ -48,22 +49,72 @@ function RegisterForm() {
       InputUserRef.current?.setCustomValidity("");
     }
     //deteccion de error en el input de phone
-    if (InputUserPhone.current?.validity.patternMismatch) {
+    if (
+      InputUserPhone.current?.validity.rangeUnderflow ||
+      InputUserPhone.current?.validity.rangeOverflow
+    ) {
       InputUserPhone.current.setCustomValidity(
         "El telefono del usuario debe tener al menos un numero entre 300 y 320 "
       );
     } else {
       InputUserPhone.current?.setCustomValidity("");
     }
+    //deteccion de error en el input de phone2
+    if (
+      InputUserPhone2.current?.validity.rangeUnderflow ||
+      InputUserPhone2.current?.validity.rangeOverflow
+    ) {
+      InputUserPhone2.current.setCustomValidity(
+        "El telefono del usuario debe tener debe tener 7 caracteres numericos"
+      );
+    } else {
+      InputUserPhone2.current?.setCustomValidity("");
+    }
+  }
+
+/* funcion para enviar los datos del formulario */
+  function handleSubmit(form: React.FormEvent<HTMLFormElement>) {
+    form.preventDefault();
+    //creacion del formData que se enviara
+    let bodyFormData = new FormData();
+    bodyFormData.set("userName", userRegister.userName);
+    bodyFormData.set("email", `${userRegister.phoneNumber}`);
+    bodyFormData.set(
+      "phone_number",
+      `${phoneInit}${userRegister.phoneNumber}`
+    );
+    //envio de datos mediante axios, configurando el formData
+    axios({
+      method: "post",
+      url: "http://sgaviria.com/api/1/front-dev/",
+      data: bodyFormData,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Tranqui-FrontendDeveloper": "RODRIGOESCOBARLOPEZ"
+      }
+    })
+      .then(function(response) {
+        //handle success
+        console.log(response);
+      })
+      .catch(function(response) {
+        //handle error
+        console.log(response);
+      });
   }
 
   useEffect(() => {
     checkInput();
-  }, [userRegister]);
+  }, [userRegister, phoneInit]);
   return (
     <div className="container-form">
       <h1 className="form-title">Formulario de Registro</h1>
-      <form className="form-register">
+      <form
+        className="form-register"
+        onSubmit={e => {
+          handleSubmit(e);
+        }}
+      >
         <label className="label-group" htmlFor="completeName">
           <span>Nombre de usuario</span>
           <input
@@ -71,7 +122,7 @@ function RegisterForm() {
             type="text"
             name="userName"
             id="completeUserName"
-            placeholder="Andres Escobar Perez"
+            placeholder="ocralo"
             ref={InputUserRef}
             pattern="[^\s]{4,20}"
             required
@@ -89,13 +140,14 @@ function RegisterForm() {
               name="phoneNumber"
               id="phone"
               placeholder="300"
+              pattern="[^\s]{4,20}"
               value={phoneInit}
               min="300"
               max="320"
-              ref={InputUserPhoneInit}
+              ref={InputUserPhone}
               required
               onChange={e => {
-                setPhoneInit(Number(e.target.value))
+                setPhoneInit(Number(e.target.value));
               }}
             />
             <input
@@ -103,9 +155,10 @@ function RegisterForm() {
               type="number"
               name="phoneNumber2"
               id="phone2"
-              placeholder="3434 3434"
+              min="1000000"
+              max="9999999"
               value={userRegister.phoneNumber}
-              ref={InputUserPhone}
+              ref={InputUserPhone2}
               required
               onChange={e => {
                 changeDataUser(e.target);

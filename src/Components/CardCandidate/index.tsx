@@ -8,15 +8,15 @@ function CardCandidate(props: IProps) {
     <div className="card-candidate">
       <div className="col-card-left">
         <h2>Candidato:</h2>
-        <p>nombre apellido1 apellido2</p>
-        <p>edad</p>
-        <p>slogan</p>
+        <p>{`${props.candidate.firstname} ${props.candidate.lastname}`}</p>
+        <p>{props.candidate.age}</p>
+        <p>{props.candidate.slogan}</p>
       </div>
       <div className="col-card-right">
-        <h2>Votos numero</h2>
+        <h2>Votos: {props.candidate.votes}</h2>
         <div>
-          <button>+</button>
-          <button>-</button>
+          <button className="unit button">+</button>
+          <button className="unit button">-</button>
         </div>
       </div>
     </div>

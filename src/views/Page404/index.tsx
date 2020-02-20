@@ -1,5 +1,5 @@
 //Se importan las librerias necesarias
-import React, { useState, useRef } from "react";
+import React from "react";
 import "./style.css";
 
 function Page404() {

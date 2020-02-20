@@ -1,5 +1,5 @@
 //Se importan las librerias necesarias
-import React, { FunctionComponent, useState } from "react";
+import React from "react";
 //se importan los estilos
 import "./style.css";
 //Se importan los componentes

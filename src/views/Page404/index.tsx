@@ -17,10 +17,3 @@ function Page404() {
 
 //Se exporta el componente
 export default Page404;
-
-/* <div class="banner">
-        <p>404</p>
-    </div>
-    <div>
-        <button onclick="goBack()">GO BACK</button>
-    </div> */

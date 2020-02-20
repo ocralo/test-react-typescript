@@ -29,12 +29,15 @@ function VotingList(props: ComponentProps) {
 
   /* Funcion, para añadir votos a los candidatos */
   function addVote(i: number) {
-    if (candidates) {
-      candidates[i].votes = 45;
-      setCandidates(candidates);
+      if (candidates) {
+        let auxCandidates =[...candidates]
+          auxCandidates[i].votes++;
+          setCandidates(
+            auxCandidates.sort((a: ICandidates, b: ICandidates) => {
+              return b.votes - a.votes;
+            })
+          );
     }
-    console.log(candidates);
-    console.log("gg");
   }
   /* Funcion, para quitar votos a los candidatos */
   function deleteVote(candidate: ICandidates) {}
@@ -42,7 +45,11 @@ function VotingList(props: ComponentProps) {
   //rellena los candidatos, cada vez que inicia la aplicacion o que cambie el dato props.match.params.candidates
   useEffect(() => {
     setCandidates(generateCandidate(+props.match.params.candidates));
-  }, [props.match.params.candidates]);
+  }, []);
+
+  useEffect(() => {
+    console.log("cambio");
+  }, [candidates]);
 
   return (
     <div>

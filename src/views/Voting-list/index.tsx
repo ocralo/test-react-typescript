@@ -16,7 +16,7 @@ function generateCandidate(i: number) {
       lastname: faker.name.lastName(),
       age: Math.floor(Math.random() * (80 - 18) + 18),
       slogan: faker.company.catchPhraseDescriptor(),
-      votes: Math.floor(Math.random() * (80 - 1) + 1)
+      votes: Math.floor(Math.random() * (20 - 0) + 0)
     };
 
     arrayCandidates.push(aux);
@@ -25,17 +25,23 @@ function generateCandidate(i: number) {
 }
 
 function VotingList(props: ComponentProps) {
-  const [candidate, setCandidate] = useState<ICandidates[]>();
+  const [candidates, setCandidates] = useState<ICandidates[]>();
 
   //rellena los candidatos, cada vez que inicia la aplicacion o que cambie el dato props.match.params.candidates
   useEffect(() => {
-    setCandidate(generateCandidate(+props.match.params.candidates));
+    setCandidates(generateCandidate(+props.match.params.candidates));
   }, [props.match.params.candidates]);
+    
   return (
     <div>
-      {candidate?.map((data: ICandidates, i: number) => {
-        return <CardCandidate key={data.firstname+i} candidate={data} />;
-      })}
+      {candidates &&
+        candidates
+          .sort((a: ICandidates, b: ICandidates) => {
+            return b.votes - a.votes;
+          })
+          .map((data: ICandidates, i: number) => {
+            return <CardCandidate key={data.firstname + i} candidate={data} />;
+          })}
     </div>
   );
 }

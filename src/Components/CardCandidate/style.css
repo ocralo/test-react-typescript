@@ -2,7 +2,6 @@
   display: flex;
   width: 35em;
   justify-content: space-around;
-  border: 3px solid black;
   outline: 0;
   border-radius: 320px;
   padding: 8px;
@@ -10,11 +9,17 @@
   text-shadow: 1px 1px 0 #fff;
 }
 
+.card-candidate {
+  box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+  margin: 2em;
+  padding: 1em;
+}
+
 .unit {
   border-radius: 10px;
   line-height: 0;
-  width: 48px;
-  height: 48px;
+  width: 5em;
+  height: 1em;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +53,32 @@
 }
 
 .col-card-left {
+  text-align: left;
+}
+.col-card-left > h2 {
+  color: #757575;
+  text-shadow: 1px 1px 1px #fff;
+}
+.col-card-left > p {
+  color: #babecc;
+  text-shadow: 1px 1px 1px #fff;
+  margin-top: 0.2em;
+  margin-bottom: 0em;
 }
 
 .col-card-right {
+  text-align: center;
+}
+.col-card-right > h4 {
+  color: #9b9a9a;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+.button-remove{
+    box-shadow: -5px -5px 13px #f1eeee, 5px 5px 13px #c0a8a8;
+    border: 2px solid #c0aeae;
+    background-color: #c0a8a8;
+}
+.button-remove:hover{
+    box-shadow: -2px -2px 5px #f1eeee, 2px 2px 5px #c0a8a8;
 }

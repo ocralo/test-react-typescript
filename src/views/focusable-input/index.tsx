@@ -3,14 +3,12 @@ import React, { FunctionComponent, useState } from "react";
 //se importan los estilos
 import "./style.css";
 //Se importan los componentes
-import TextInput from "../../Components/TextInput";
+import FocusableTextInput from "../../Components/FocusableTextInput";
 
 function focusableInput() {
   return (
     <section className="viewTest1">
-      <form>
-        <TextInput />
-      </form>
+      <FocusableTextInput />
     </section>
   );
 }

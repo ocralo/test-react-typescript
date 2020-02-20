@@ -24,6 +24,8 @@ body {
 
 .text-404 {
   margin: auto;
+  color: #BABECC;
+  text-shadow: 1px 1px 1px #FFF;
 }
 
 .button {

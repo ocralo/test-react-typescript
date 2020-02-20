@@ -11,6 +11,11 @@ const viewHome = Loadable({
 	loading: Spinner
 });
 
+const view404 = Loadable({
+	loader: () => import( "./views/Page404"),
+	loading: Spinner
+});
+
 /* Funcion la cual se encargara de direccionar las rutas de los componentes que se mostraran */
 function App() {
   return (
@@ -22,6 +27,7 @@ function App() {
           name="Test1"
           component={viewHome}
         />
+        <Route path="*" name="Test1" component={view404} />
       </Switch>
     </BrowserRouter>
   );

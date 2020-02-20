@@ -117,3 +117,8 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.error{
+    color: #ee6969;
+    text-align: center;
+}

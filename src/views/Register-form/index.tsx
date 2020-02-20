@@ -11,6 +11,7 @@ function RegisterForm() {
     phoneNumber: 0
   });
   const [phoneInit, setPhoneInit] = useState<number>(300);
+  const [error, setError] = useState<string>('');
 
   const InputUserRef = useRef<HTMLInputElement>(null);
   const InputUserPhone = useRef<HTMLInputElement>(null);
@@ -93,13 +94,13 @@ function RegisterForm() {
         "Tranqui-FrontendDeveloper": "RODRIGOESCOBARLOPEZ"
       }
     })
-      .then(function(response) {
-        //handle success
-        console.log(response);
+      .then(function (response) {
+        if (response.status === 200) {
+          alert("Los datos del formulario se han enviado satisfactoriamente")
+        }
       })
-      .catch(function(response) {
-        //handle error
-        console.log(response);
+      .catch(function (response) {
+        setError('Ha ocurrido un error al enviar los datos del formulario')
       });
   }
 
@@ -184,6 +185,7 @@ function RegisterForm() {
           ENVIAR DATOS
         </button>
       </form>
+      <h4 className="error">{error}</h4>
     </div>
   );
 }

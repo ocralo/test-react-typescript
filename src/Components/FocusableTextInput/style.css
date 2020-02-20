@@ -1,0 +1,20 @@
+.stateInput{
+    font-size: 10em;
+    margin: auto;
+    text-shadow: 1px 1px 1px #FFF;
+}
+
+.formFocusableTextInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.reedText{
+color: #9c6b6b;
+}
+
+.greenText{
+color: #738d78;
+}

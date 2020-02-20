@@ -1,17 +1,19 @@
-html,body{
-    height: 100vh;
-    width: 100vw;
-    background-color: #EBECF0;
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #ebecf0;
+  font-family: "Montserrat", sans-serif;
 }
-#root{
-    height: 100%;
-    width: 100%;
+#root {
+  height: 100%;
+  width: 100%;
 }
 
-.viewTest1{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.viewTest1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

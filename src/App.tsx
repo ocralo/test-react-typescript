@@ -21,6 +21,11 @@ const votingList = Loadable({
   loading: Spinner
 });
 
+const viewRegister = Loadable({
+  loader: () => import("./views/Register-form"),
+  loading: Spinner
+});
+
 /* Funcion la cual se encargara de direccionar las rutas de los componentes que se mostraran */
 function App() {
   return (
@@ -37,6 +42,7 @@ function App() {
           name="Test2"
           component={votingList}
         />
+        <Route path="/register-form" name="Test3" component={viewRegister} />
         <Route path="*" name="Error 404" component={view404} />
       </Switch>
     </BrowserRouter>

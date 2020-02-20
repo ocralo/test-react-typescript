@@ -3,7 +3,7 @@
   width: 35em;
   justify-content: space-around;
   outline: 0;
-  border-radius: 320px;
+  border-radius: 2em;
   padding: 8px;
   background-color: #ebecf0;
   text-shadow: 1px 1px 0 #fff;
@@ -72,6 +72,9 @@
 .col-card-right > h4 {
   color: #9b9a9a;
   text-shadow: 1px 1px 1px #fff;
+}
+.col-card-right {
+  color: #414141;
 }
 
 .button-remove{

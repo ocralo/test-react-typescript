@@ -27,11 +27,23 @@ function generateCandidate(i: number) {
 function VotingList(props: ComponentProps) {
   const [candidates, setCandidates] = useState<ICandidates[]>();
 
+  /* Funcion, para añadir votos a los candidatos */
+  function addVote(i: number) {
+    if (candidates) {
+      candidates[i].votes = 45;
+      setCandidates(candidates);
+    }
+    console.log(candidates);
+    console.log("gg");
+  }
+  /* Funcion, para quitar votos a los candidatos */
+  function deleteVote(candidate: ICandidates) {}
+
   //rellena los candidatos, cada vez que inicia la aplicacion o que cambie el dato props.match.params.candidates
   useEffect(() => {
     setCandidates(generateCandidate(+props.match.params.candidates));
   }, [props.match.params.candidates]);
-    
+
   return (
     <div>
       {candidates &&
@@ -40,7 +52,14 @@ function VotingList(props: ComponentProps) {
             return b.votes - a.votes;
           })
           .map((data: ICandidates, i: number) => {
-            return <CardCandidate key={data.firstname + i} candidate={data} />;
+            return (
+              <CardCandidate
+                key={i}
+                idCard={i}
+                candidate={data}
+                functionAddVote={addVote}
+              />
+            );
           })}
     </div>
   );

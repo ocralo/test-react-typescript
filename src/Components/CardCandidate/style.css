@@ -1,0 +1,18 @@
+.card-candidate {
+  display: flex;
+  width: 35em;
+  justify-content: space-around;
+  border: 3px solid black;
+  outline: 0;
+  border-radius: 320px;
+  padding: 8px;
+  background-color: #ebecf0;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.col-card-right{
+    
+}
+.col-card-left{
+
+}

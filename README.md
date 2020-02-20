@@ -10,6 +10,7 @@ Para poder iniciar el proyecto, se debe colocar el siguiente comando `npm instal
 [react-router](https://www.npmjs.com/package/react-router).
 [react-loadable](https://www.npmjs.com/package/react-loadable).
 [react-router-dom](https://www.npmjs.com/package/react-router-dom).
+[faker](https://www.npmjs.com/package/faker).
 
 
 ### `npm start`

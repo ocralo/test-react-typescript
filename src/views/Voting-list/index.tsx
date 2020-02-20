@@ -18,15 +18,19 @@ function generateCandidate(i: number) {
       slogan: faker.company.catchPhraseDescriptor(),
       votes: Math.random() * (80 - 1) + 1
     };
-      
+
     arrayCandidates.push(aux);
   }
   return arrayCandidates;
 }
 
 function VotingList(props: ComponentProps) {
-  
-  console.log(faker.random.number());
+  const [candidate, setCandidate] = useState<ICandidates[]>();
+
+  //rellena los candidatos, cada vez que inicia la aplicacion o que cambie el dato props.match.params.candidates
+  useEffect(() => {
+    setCandidate(generateCandidate(+props.match.params.candidates));
+  }, [props.match.params.candidates]);
   return <div>{<CardCandidate />}</div>;
 }
 

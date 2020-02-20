@@ -14,9 +14,9 @@ function generateCandidate(i: number) {
     let aux: ICandidates = {
       firstname: faker.name.firstName(),
       lastname: faker.name.lastName(),
-      age: Math.random() * (80 - 18) + 18,
+      age: Math.floor(Math.random() * (80 - 18) + 18),
       slogan: faker.company.catchPhraseDescriptor(),
-      votes: Math.random() * (80 - 1) + 1
+      votes: Math.floor(Math.random() * (80 - 1) + 1)
     };
 
     arrayCandidates.push(aux);

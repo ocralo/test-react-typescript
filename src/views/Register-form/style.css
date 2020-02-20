@@ -101,7 +101,6 @@ body {
   margin-right: 8px;
   box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
   box-sizing: border-box;
-  width: 15em;
   transition: all 0.2s ease-in-out;
   appearance: none;
   -webkit-appearance: none;

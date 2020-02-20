@@ -1,0 +1,110 @@
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #ebecf0;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.container-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-title {
+  color: #545766;
+  text-shadow: 1px 1px 1px #fff;
+  text-align: center;
+}
+
+.form-register {
+  box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: #ebecf0;
+  text-shadow: 1px 1px 0 #fff;
+  padding: 2em;
+}
+
+.form-register {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  width: 300px;
+  height: 400px;
+}
+
+.button-submit {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 320px;
+  padding: 16px;
+  background-color: #ebecf0;
+  text-shadow: 1px 1px 0 #fff;
+  color: #61677c;
+  font-weight: bold;
+  box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.button-submit:hover {
+  box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+}
+.button-submit:active {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}
+
+.label-group {
+  display: block;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.label-group {
+  color: rgb(135, 137, 145);
+  text-shadow: 1px 1px 1px #fff;
+  text-align: center;
+}
+
+.input-form {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 320px;
+  padding: 16px;
+  background-color: #ebecf0;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.input-form {
+  margin-right: 8px;
+  box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #fff;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.input-form:focus {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}

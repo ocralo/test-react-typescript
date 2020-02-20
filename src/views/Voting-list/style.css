@@ -1,0 +1,13 @@
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #ebecf0;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+#root {
+  height: 100%;
+  width: 100%;
+}

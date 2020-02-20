@@ -31,7 +31,13 @@ function VotingList(props: ComponentProps) {
   useEffect(() => {
     setCandidate(generateCandidate(+props.match.params.candidates));
   }, [props.match.params.candidates]);
-  return <div>{<CardCandidate />}</div>;
+  return (
+    <div>
+      {candidate?.map((data: ICandidates, i: number) => {
+        return <CardCandidate key={data.firstname+i} candidate={data} />;
+      })}
+    </div>
+  );
 }
 
 interface ICandidates {

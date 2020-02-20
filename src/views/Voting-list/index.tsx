@@ -25,37 +25,37 @@ function generateCandidate(i: number) {
 }
 
 function VotingList(props: ComponentProps) {
-    const [candidates, setCandidates] = useState<ICandidates[]>();
-    
-  /* Funcion, para añadir votos a los candidatos */
+  const [candidates, setCandidates] = useState<ICandidates[]>();
+
+  /* Funcion, para añadir votos a los candidatos y que no pase de un maximo de 20 votos*/
   function addVote(i: number) {
-      if (candidates) {
-        let auxCandidates =[...candidates]
-          auxCandidates[i].votes++;
-          setCandidates(
-            auxCandidates.sort((a: ICandidates, b: ICandidates) => {
-              return b.votes - a.votes;
-            })
-          );
+    if (candidates) {
+      let auxCandidates = [...candidates];
+      if (auxCandidates[i].votes < 20) auxCandidates[i].votes++;
+      setCandidates(
+        auxCandidates.sort((a: ICandidates, b: ICandidates) => {
+          return b.votes - a.votes;
+        })
+      );
     }
   }
-  /* Funcion, para quitar votos a los candidatos */
-    function deleteVote(i: number) {
-      if (candidates) {
-        let auxCandidates = [...candidates];
-        auxCandidates[i].votes--;
-        setCandidates(
-          auxCandidates.sort((a: ICandidates, b: ICandidates) => {
-            return b.votes - a.votes;
-          })
-        );
-      }
+  /* Funcion, para quitar votos a los candidatos y que no pase de un minimo de 0 votos*/
+  function deleteVote(i: number) {
+    if (candidates) {
+      let auxCandidates = [...candidates];
+      if (auxCandidates[i].votes > 0) auxCandidates[i].votes--;
+      setCandidates(
+        auxCandidates.sort((a: ICandidates, b: ICandidates) => {
+          return b.votes - a.votes;
+        })
+      );
+    }
   }
 
   //rellena los candidatos, cada vez que inicia la aplicacion o que cambie el dato props.match.params.candidates
   useEffect(() => {
     setCandidates(generateCandidate(+props.match.params.candidates));
-  }, []);
+  }, [props.match.params.candidates]);
 
   useEffect(() => {
     console.log("cambio");

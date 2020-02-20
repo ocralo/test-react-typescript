@@ -15,8 +15,22 @@ function CardCandidate(props: IProps) {
       <div className="col-card-right">
         <h2>Votos: {props.candidate.votes}</h2>
         <div>
-          <button className="unit button" onClick={e=>{props.functionAddVote(props.idCard)}}>+</button>
-          <button className="unit button">-</button>
+          <button
+            className="unit button"
+            onClick={e => {
+              props.functionAddVote(props.idCard);
+            }}
+          >
+            +
+          </button>
+          <button
+            className="unit button"
+            onClick={e => {
+              props.functionDeleteVote(props.idCard);
+            }}
+          >
+            -
+          </button>
         </div>
       </div>
     </div>
@@ -34,6 +48,7 @@ interface ICandidates {
 interface IProps{
     candidate: ICandidates,
     functionAddVote: Function,
+    functionDeleteVote: Function,
     idCard:number
 }
 

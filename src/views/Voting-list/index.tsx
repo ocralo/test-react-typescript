@@ -25,8 +25,8 @@ function generateCandidate(i: number) {
 }
 
 function VotingList(props: ComponentProps) {
-  const [candidates, setCandidates] = useState<ICandidates[]>();
-
+    const [candidates, setCandidates] = useState<ICandidates[]>();
+    
   /* Funcion, para añadir votos a los candidatos */
   function addVote(i: number) {
       if (candidates) {
@@ -40,7 +40,17 @@ function VotingList(props: ComponentProps) {
     }
   }
   /* Funcion, para quitar votos a los candidatos */
-  function deleteVote(candidate: ICandidates) {}
+    function deleteVote(i: number) {
+      if (candidates) {
+        let auxCandidates = [...candidates];
+        auxCandidates[i].votes--;
+        setCandidates(
+          auxCandidates.sort((a: ICandidates, b: ICandidates) => {
+            return b.votes - a.votes;
+          })
+        );
+      }
+  }
 
   //rellena los candidatos, cada vez que inicia la aplicacion o que cambie el dato props.match.params.candidates
   useEffect(() => {
@@ -65,6 +75,7 @@ function VotingList(props: ComponentProps) {
                 idCard={i}
                 candidate={data}
                 functionAddVote={addVote}
+                functionDeleteVote={deleteVote}
               />
             );
           })}

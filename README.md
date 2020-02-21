@@ -2,15 +2,17 @@ Este proyecto se genero con [Create React App](https://github.com/facebook/creat
 
 ## utilizar el proyecto
 
-Debes tener instalado en tu computador [nodejs](https://nodejs.org/es/) en la ultima version version LTS o minimo desde la version 10.16.3 LTS <br/>
-Para poder iniciar el proyecto, se debe colocar el siguiente comando `npm install`, para poder instalar todas las librerias que se necesiten en el proyecto
+Debes tener instalado en tu computador [nodejs](https://nodejs.org/es/) en la ultima version version LTS o minimo desde la version 10.16.3 LTS. <br/>
+Para poder iniciar el proyecto, se debe colocar el siguiente comando `npm install`, para poder instalar todas las librerias que se necesiten en el proyecto.
 
 ## Librerias utilizadas
 
-[react-router](https://www.npmjs.com/package/react-router).
-[react-loadable](https://www.npmjs.com/package/react-loadable).
-[react-router-dom](https://www.npmjs.com/package/react-router-dom).
-[faker](https://www.npmjs.com/package/faker).
+- [react-router](https://www.npmjs.com/package/react-router).
+- [react-loadable](https://www.npmjs.com/package/react-loadable).
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom).
+- [faker](https://www.npmjs.com/package/faker).
+- [axios](https://www.npmjs.com/package/axios).
+- [gh-pages](https://www.npmjs.com/package/gh-pages).
 
 
 ### `npm start`
@@ -19,23 +21,12 @@ Para poder iniciar el proyecto, se debe colocar el siguiente comando `npm instal
 Inicia la aplicacion en modo desarrollador.<br />
 Abre en tu navegador [http://localhost:3000](http://localhost:3000) para ver los cambios que estan realizando al codigo.
 
-### `npm test`
+### `npm run deploy`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Comando para compilar el proyector para subir a github pages, antes de ejecutar este comando, ejecutar el comando `npm run build`
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Compila el proyecto, en la carpeta build, para enviar el proyecto a produccion.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

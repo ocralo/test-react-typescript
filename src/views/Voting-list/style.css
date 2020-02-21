@@ -11,3 +11,16 @@ body {
   height: 100%;
   width: 100%;
 }
+
+.container-card-candidate{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 100%;
+}
+
+.title-candidate{
+    color: #b3bbd3;
+  text-shadow: 1px 1px 1px #FFF;
+}

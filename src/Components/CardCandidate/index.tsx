@@ -15,22 +15,24 @@ function CardCandidate(props: IProps) {
       <div className="col-card-right">
         <h2>Votos: {props.candidate.votes}</h2>
         <div>
-          <button
-            className="unit button"
-            onClick={e => {
-              props.functionAddVote(props.idCard);
-            }}
-          >
-            +
-          </button>
-          <button
-            className="unit button"
-            onClick={e => {
-              props.functionDeleteVote(props.idCard);
-            }}
-          >
-            -
-          </button>
+          <div className="card-container-button">
+            <button
+              className="unit button"
+              onClick={e => {
+                props.functionAddVote(props.idCard);
+              }}
+            >
+              +
+            </button>
+            <button
+              className="unit button"
+              onClick={e => {
+                props.functionDeleteVote(props.idCard);
+              }}
+            >
+              -
+            </button>
+          </div>
         </div>
       </div>
     </div>

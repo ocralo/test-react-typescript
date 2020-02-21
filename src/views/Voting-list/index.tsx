@@ -63,6 +63,8 @@ function VotingList(props: ComponentProps) {
 
   return (
     <div>
+      <h1 className="title-candidate">Lista de candidatos</h1>
+      <div className="container-card-candidate">
       {candidates &&
         candidates
           .sort((a: ICandidates, b: ICandidates) => {
@@ -79,6 +81,7 @@ function VotingList(props: ComponentProps) {
               />
             );
           })}
+      </div>
     </div>
   );
 }

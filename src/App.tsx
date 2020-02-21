@@ -1,7 +1,7 @@
 //Se importan las librerias necesarias
 import React from "react";
 import Loadable from "react-loadable";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import Spinner from "./Components/Spinner";
 
 /* Se agrega la vista del componente a una constante y le agrega el loadeble, 
@@ -29,7 +29,7 @@ const viewRegister = Loadable({
 /* Funcion la cual se encargara de direccionar las rutas de los componentes que se mostraran */
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter basename='/'>
       <Switch>
         <Route
           exact
@@ -45,7 +45,7 @@ function App() {
         <Route path="/register-form" name="Test3" component={viewRegister} />
         <Route path="*" name="Error 404" component={view404} />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 //Se exporta el componente

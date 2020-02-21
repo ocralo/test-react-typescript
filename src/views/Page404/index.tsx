@@ -1,5 +1,6 @@
 //Se importan las librerias necesarias
 import React from "react";
+import {Link} from "react-router-dom"
 import "./style.css";
 
 function Page404() {
@@ -9,7 +10,9 @@ function Page404() {
         <p className="text-404">Error 404</p>
       </div>
       <div>
-        <button className="button">Regresar</button>
+        <Link to="/focusable-input" className="button">
+          Regresar
+        </Link>
       </div>
     </div>
   );

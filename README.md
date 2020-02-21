@@ -5,6 +5,12 @@ Este proyecto se genero con [Create React App](https://github.com/facebook/creat
 Debes tener instalado en tu computador [nodejs](https://nodejs.org/es/) en la ultima version version LTS o minimo desde la version 10.16.3 LTS. <br/>
 Para poder iniciar el proyecto, se debe colocar el siguiente comando `npm install`, para poder instalar todas las librerias que se necesiten en el proyecto.
 
+### Rutas de los test
+
+- Enlace [Prueba 1](https://ocralo.github.io/test-react-typescript/#/focusable-input)
+- Enlace [Prueba 2](https://ocralo.github.io/test-react-typescript/#/voting-list/2)
+- Enlace [Prueba 3](https://ocralo.github.io/test-react-typescript/#/register-form)
+
 ## Librerias utilizadas
 
 - [react-router](https://www.npmjs.com/package/react-router).

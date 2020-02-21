@@ -1,2 +1,0 @@
-(this["webpackJsonptypescript-react-test"]=this["webpackJsonptypescript-react-test"]||[]).push([[8],{1118:function(e,t,a){"use strict";a.r(t);var n=a(0),r=a.n(n);a(46);t.default=function(){return r.a.createElement("div",{className:"container"},r.a.createElement("div",{className:"banner"},r.a.createElement("p",{className:"text-404"},"Error 404")),r.a.createElement("div",null,r.a.createElement("button",{className:"button"},"Regresar")))}},46:function(e,t,a){}}]);
-//# sourceMappingURL=8.bc4700b1.chunk.js.map

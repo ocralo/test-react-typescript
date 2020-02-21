@@ -1,0 +1,2 @@
+(this["webpackJsonptypescript-react-test"]=this["webpackJsonptypescript-react-test"]||[]).push([[7],{1116:function(e,t,a){"use strict";a.r(t);var n=a(0),c=a.n(n),r=a(13);a(45);t.default=function(){return c.a.createElement("div",{className:"container"},c.a.createElement("div",{className:"banner"},c.a.createElement("p",{className:"text-404"},"Error 404")),c.a.createElement("div",null,c.a.createElement(r.b,{to:"/focusable-input",className:"button"},"Regresar")))}},45:function(e,t,a){}}]);
+//# sourceMappingURL=7.ed809bf5.chunk.js.map
